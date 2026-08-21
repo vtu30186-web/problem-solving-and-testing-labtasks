@@ -1,0 +1,21 @@
+import java.util.Comparator;
+
+class Checker implements Comparator<Player> {
+    // method to compare two Player objects
+    @Override
+    public int compare(Player a, Player b) {
+        // 1. If scores are equal, sort alphabetically ascending by name
+        if (a.score == b.score) {
+            return a.name.compareTo(b.name);
+        }
+        
+        // 2. Otherwise, sort descending by score
+        // Returning a positive value moves 'a' after 'b'
+        // Returning a negative value moves 'a' before 'b'
+        if (a.score < b.score) {
+            return 1;  
+        } else {
+            return -1; 
+        }
+    }
+}

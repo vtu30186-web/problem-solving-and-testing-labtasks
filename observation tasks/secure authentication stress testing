@@ -1,0 +1,39 @@
+import java.util.*;
+
+public class task10 {
+
+    static String login(String username, String password) {
+
+        // Boundary value validation
+        if (username.length() < 3 || username.length() > 20)
+            return "FAILURE";
+
+        if (password.length() < 6 || password.length() > 20)
+            return "FAILURE";
+
+        // Valid credentials
+        if (username.equals("admin") &&
+            password.equals("admin123")) {
+            return "SUCCESS";
+        }
+
+        return "FAILURE";
+    }
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+
+        for (int i = 0; i < n; i++) {
+
+            String username = sc.next();
+            String password = sc.next();
+
+            System.out.println(login(username, password));
+        }
+
+        sc.close();
+    }
+}
